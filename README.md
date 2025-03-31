@@ -3,10 +3,10 @@
 ## Запуск проекта
 
 ### 1. Запуск контейнеров
-
+```
 cd /workspaces/codespaces-blank/project_practice
 docker-compose up
-
+```
 ### 2. Настройка окружения для Playwright
 
 Программа выполняет следующие функции:
