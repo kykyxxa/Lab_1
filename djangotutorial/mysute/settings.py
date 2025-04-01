@@ -39,6 +39,7 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'rest_framework',
+    'countrypop.apps.CountryPopulationConfig',
     'polls.apps.PollsConfig',
     "django.contrib.admin",
     "django.contrib.auth",

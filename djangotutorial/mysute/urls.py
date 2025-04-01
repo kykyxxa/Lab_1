@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-
+from countrypop.views import CountryPopulationListView
 
 
 # Serializers define the API representation.
@@ -27,4 +27,5 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('polls/', include('polls.urls')),
     path("admin/", admin.site.urls),
+    path('api/countrypop/', CountryPopulationListView.as_view(), name='countrypop')
 ]
