@@ -1,4 +1,4 @@
-#!/workspaces/Lab_1/playwright/venv/bin/python
+#!/workspaces/project-practicum/playwright/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
