@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CountryPopulation  # Импортируем модель
+from countrypop.models import CountryPopulation  # Импортируем модель
 
 class CountryPopulationSerializer(serializers.ModelSerializer):
     class Meta:

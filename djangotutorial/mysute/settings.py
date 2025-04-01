@@ -20,36 +20,33 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-(jyyu1z@u%rzkjvb5%cr0ezjs5t#99fe&1o*w2^7db_h1l2=4e"
+SECRET_KEY = "django-insecure-6&6=9fyuw0vu0&@ldkt0hy)3#a0@*k-2rp2iiv_8yokk1zq#vh"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+ALLOWED_HOSTS = [
+    "*"
     ]
-}
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
-    'countrypop.apps.CountryPopulationConfig',
-    'polls.apps.PollsConfig',
+    "polls.apps.PollsConfig",
+    "countrypop.apps.CountryPopulationConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -131,3 +128,23 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5173",  # Vite фронтенд
+    "http://localhost:5173",
+]
+
+CSRF_TRUSTED_COOKIES = [
+    "http://127.0.0.1:5173",
+    "http://localhost:5173"
+    ]
+
+CORS_ALLOW_CREDENTIALS = True

@@ -1,8 +1,8 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.renderers import JSONRenderer
-from .models import CountryPopulation
-from .serializers import CountryPopulationSerializer
-from .renderers import CSVRenderer  # Импортируем CSV-рендерер
+from countrypop.models import CountryPopulation
+from countrypop.serializers import CountryPopulationSerializer
+from countrypop.renderers import CSVRenderer  # Импортируем CSV-рендерер
 
 class CountryPopulationListView(ListAPIView):
     queryset = CountryPopulation.objects.all()
